@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Komek app</string>
+    <string name="more_info">more info</string>
+    <string name="registration">registration</string>
+    <string name="sign_in">sign in</string>
+    <string name="back">back</string>
+    <string name="volunteer">volunteer</string>
+    <string name="inclusive">inclusive</string>
+</resources>
