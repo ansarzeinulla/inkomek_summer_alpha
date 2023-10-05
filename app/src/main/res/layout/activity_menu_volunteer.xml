@@ -133,7 +133,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="8dp"
-                    android:text="moi application "
+                    android:text="shop"
                     app:layout_constraintEnd_toEndOf="@+id/menuV1"
                     app:layout_constraintTop_toBottomOf="@+id/menuV3" />
             </LinearLayout>

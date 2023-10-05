@@ -61,7 +61,7 @@ String login;
         b4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(menuVolunteer.this, announcement_my_vol.class);
+                Intent intent=new Intent(menuVolunteer.this, shoplist.class);
                 intent.putExtra("login",login);
                 startActivity(intent);
             }
