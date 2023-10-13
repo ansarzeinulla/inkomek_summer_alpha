@@ -10,6 +10,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -131,7 +132,7 @@ DatabaseReference reference;
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                TextView tv=findViewById(R.id.chattv);
+                EditText tv=findViewById(R.id.chattv);
                 String tekst=tv.getText().toString();
                 String z = login+" : "+tekst;
 

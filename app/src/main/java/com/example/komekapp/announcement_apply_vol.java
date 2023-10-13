@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
@@ -56,6 +57,9 @@ Integer numOfCandidates;
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 Log.e("VJ",snapshot.child("timedate").getValue(String.class));
                 numOfCandidates=snapshot.child("numOfVolunteers").getValue(Integer.class);
+
+                TextView annav_tv=findViewById(R.id.annav_tv);
+                annav_tv.setText(snapshot.child("tasl_title").getValue(String.class)+snapshot.child("task_detail").getValue(String.class)+snapshot.child("task_points").getValue(Integer.class).toString());
             }
             @Override
             public void onCancelled(@NonNull DatabaseError error) {

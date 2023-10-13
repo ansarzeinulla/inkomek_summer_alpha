@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -52,6 +53,7 @@ String login, name;
                 String code=snapshot.child("code").getValue(String.class);
                 TextView tv1=findViewById(R.id.shopdetailtv1);
                 Button buybtn=findViewById(R.id.shopdetailbtnbuy);
+                EditText ed=findViewById(R.id.shopdetailcodeinput);
                 buybtn.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
@@ -60,11 +62,11 @@ String login, name;
                             @Override
                             public void onDataChange(@NonNull DataSnapshot snapshot2) {
                                 Integer havingpoints=snapshot2.child("points").getValue(Integer.class);
-                                Log.e("havingPOINTS",havingpoints.toString());
-                                Log.e("code",code);
-                                Log.e("cost",cost.toString());
-                                if(havingpoints>=cost && code==tv1.getText().toString()){
+                                if(havingpoints>=cost && code.equals(ed.getText().toString())){
+                                    Log.e("IF", "ture");
                                     referenceHuman.child("points").setValue(havingpoints-cost);
+                                }else{
+                                    Log.e("WHY FALSE","FALSE");
                                 }
                             }
                             @Override
