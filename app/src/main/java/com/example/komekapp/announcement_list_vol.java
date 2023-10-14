@@ -87,7 +87,7 @@ String list_login,list_timedate;
 //                            })
                             //so each snapshot is a task->login->timedate
                             if(snapshot0.child("isAssigned").getValue(Boolean.class)==false && snapshot0.child("isClosed").getValue(Boolean.class)==false) {
-                                result.add(snapshot0.child("task_title").getValue(String.class) + ":" + snapshot0.child("timedate").getValue(String.class)+"|"+snapshot0.child("task_points").getValue(Integer.class).toString());
+                                result.add(snapshot0.child("task_title").getValue(String.class) + "| Уақыт: " + snapshot0.child("timedate").getValue(String.class)+"| Ұпай саны: "+snapshot0.child("task_points").getValue(Integer.class).toString());
                                 result_timedate.add(snapshot0.child("timedate").getValue(String.class));
                                 result_inc_login.add(snapshot0.child("inc_login").getValue(String.class));
                                 adapter.notifyDataSetChanged();

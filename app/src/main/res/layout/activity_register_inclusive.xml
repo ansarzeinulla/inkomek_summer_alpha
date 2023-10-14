@@ -41,7 +41,7 @@
                 android:layout_height="48dp"
                 android:ems="10"
                 android:hint="name"
-                android:inputType="text|textPassword"
+                android:inputType="text"
                 android:textColor="@color/white"
                 android:textColorHint="@color/white"
                 android:textSize="25dp"
@@ -65,26 +65,26 @@
                 android:layout_height="48dp"
                 android:ems="10"
                 android:hint="teleph"
+                android:inputType="phone"
                 android:textColor="@color/white"
                 android:textColorHint="@color/white"
                 android:textSize="25dp"
-                android:textStyle="bold"
-                android:inputType="text" />
+                android:textStyle="bold" />
 
             <EditText
                 android:id="@+id/irEmail"
                 android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:drawableLeft="@drawable/ic_baseline_email_24"
+                android:drawablePadding="20dp"
+                android:ems="10"
+                android:hint="email"
+
+                android:inputType="text|textEmailAddress"
                 android:textColor="@color/white"
                 android:textColorHint="@color/white"
                 android:textSize="25dp"
-                android:drawableLeft="@drawable/ic_baseline_email_24"
-                android:drawablePadding="20dp"
-
-                android:textStyle="bold"
-                android:layout_height="48dp"
-                android:ems="10"
-                android:hint="email"
-                android:inputType="text" />
+                android:textStyle="bold" />
 
             <EditText
                 android:id="@+id/irPassword"
@@ -92,11 +92,11 @@
                 android:layout_height="48dp"
                 android:ems="10"
                 android:hint="password"
+                android:inputType="text|textPassword"
                 android:textColor="@color/white"
                 android:textColorHint="@color/white"
                 android:textSize="25dp"
-                android:textStyle="bold"
-                android:inputType="text" />
+                android:textStyle="bold" />
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/irDetailLayout"
@@ -111,6 +111,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="detail"
+                    android:inputType="text|textLongMessage"
                     android:textColor="@color/white"
                     android:textColorHint="@color/white"
                     android:textSize="25dp"

@@ -23,7 +23,7 @@ import com.google.firebase.database.ValueEventListener;
 
 public class cabinet_volunteer extends AppCompatActivity {
     String login;
-    String oldname,oldinitial,oldpassword,oldemail,oldphone,olddetail;
+    String oldname,oldsurname,oldpassword,oldemail,oldphone,olddetail;
     Integer oldpoint;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +45,7 @@ public class cabinet_volunteer extends AppCompatActivity {
 
         TextView c1=findViewById(R.id.cabV1);
         TextView c2=findViewById(R.id.cabV2);
+        TextView c3=findViewById(R.id.cabV3);
 //        TextView c3=findViewById(R.id.cabI3);
 //        TextView c4=findViewById(R.id.cabI4);
 //        TextView c5=findViewById(R.id.cabI5);
@@ -65,20 +66,21 @@ public class cabinet_volunteer extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 oldname = snapshot.child("name").getValue(String.class);
-                oldinitial = snapshot.child("initial").getValue(String.class);
+                oldsurname= snapshot.child("surname").getValue(String.class);
                 oldpassword = snapshot.child("password").getValue(String.class);
                 oldemail = snapshot.child("email").getValue(String.class);
                 oldphone = snapshot.child("phone").getValue(String.class);
                 olddetail = snapshot.child("detail").getValue(String.class);
                 oldpoint = snapshot.child("points").getValue(Integer.class);
-                c1.setText(login);
-                c2.setText(oldpoint.toString());
+                c1.setText("Login : "+login);
+                c2.setText("Points : "+oldpoint.toString());
+                c3.setText("Helped : "+snapshot.child("counterOfHelp").getValue(Integer.class).toString());
 //                c3.setText("Name");
 //                c4.setText("Initial");
 //                c5.setText("Email");
 //                c6.setText("Phone");
                 e0.getEditText().setText(oldname);
-                e1.getEditText().setText(oldname);
+                e1.getEditText().setText(oldsurname);
                 e2.getEditText().setText(oldemail);
                 e3.getEditText().setText(oldphone);
             }
@@ -102,7 +104,7 @@ public class cabinet_volunteer extends AppCompatActivity {
                 //change value
                 DatabaseReference newhuman=FirebaseDatabase.getInstance().getReference("volunteers").child(login);
                 newhuman.child("name").setValue(e0.getEditText().getText().toString());
-                newhuman.child("initial").setValue(e1.getEditText().getText().toString());
+                newhuman.child("surname").setValue(e1.getEditText().getText().toString());
                 newhuman.child("email").setValue(e2.getEditText().getText().toString());
                 newhuman.child("phone").setValue(e3.getEditText().getText().toString());
             }

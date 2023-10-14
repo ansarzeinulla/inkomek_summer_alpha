@@ -40,11 +40,11 @@
 
     <EditText
         android:id="@+id/chattv"
-        android:layout_width="wrap_content"
-        android:layout_height="48dp"
+        android:layout_width="297dp"
+        android:layout_height="75dp"
         android:ems="10"
+        android:hint="input your text here"
         android:inputType="text"
-        android:text="Name"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/chatbtn"
         app:layout_constraintHorizontal_bias="0.12"

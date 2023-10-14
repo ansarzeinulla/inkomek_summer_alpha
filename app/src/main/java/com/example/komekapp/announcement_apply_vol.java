@@ -59,7 +59,7 @@ Integer numOfCandidates;
                 numOfCandidates=snapshot.child("numOfVolunteers").getValue(Integer.class);
 
                 TextView annav_tv=findViewById(R.id.annav_tv);
-                annav_tv.setText(snapshot.child("tasl_title").getValue(String.class)+snapshot.child("task_detail").getValue(String.class)+snapshot.child("task_points").getValue(Integer.class).toString());
+                annav_tv.setText(snapshot.child("task_title").getValue(String.class)+" | Мазмұны: "+snapshot.child("task_description").getValue(String.class)+" | Ұпай саны: "+snapshot.child("task_points").getValue(Integer.class).toString());
             }
             @Override
             public void onCancelled(@NonNull DatabaseError error) {

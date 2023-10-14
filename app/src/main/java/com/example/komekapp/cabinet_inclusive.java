@@ -71,14 +71,14 @@ Integer oldpoint;
                 oldphone = snapshot.child("phone").getValue(String.class);
                 olddetail = snapshot.child("detail").getValue(String.class);
                 oldpoint = snapshot.child("points").getValue(Integer.class);
-                c1.setText(login);
-                c2.setText(oldpoint.toString());
+                c1.setText("Login : "+login);
+                c2.setText("Points : "+oldpoint.toString());
 //                c3.setText("Name");
 //                c4.setText("Initial");
 //                c5.setText("Email");
 //                c6.setText("Phone");
                 e0.getEditText().setText(oldname);
-                e1.getEditText().setText(oldname);
+                e1.getEditText().setText(oldinitial);
                 e2.getEditText().setText(oldemail);
                 e3.getEditText().setText(oldphone);
             }

@@ -74,7 +74,7 @@ Boolean isDone=false;
             public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
                 if(snapshot.exists()){
                     //snapshot = candidate
-                    result.add(snapshot.child("name").getValue(String.class));
+                    result.add("@"+snapshot.child("login").getValue(String.class)+" | "+snapshot.child("name").getValue(String.class)+" "+snapshot.child("surname").getValue(String.class)+" " +snapshot.child("fathername").getValue(String.class) +"| Helped:" + snapshot.child("counterOfHelp").getValue(Integer.class).toString());
                     result_login_v.add(snapshot.child("login").getValue(String.class));
                     adapter.notifyDataSetChanged();
                 }
@@ -166,6 +166,28 @@ Boolean isDone=false;
                                     DatabaseReference reference_assign_candidate=FirebaseDatabase.getInstance().getReference("tasks").child(login).child(timedate);
                                     reference_assign_candidate.child("isAssigned").setValue(Boolean.TRUE);
                                     reference_assign_candidate.child("isClosed").setValue(Boolean.FALSE);
+                                }
+                                if (isAssigned==true){
+                                    DatabaseReference reference1=FirebaseDatabase.getInstance().getReference("tasks").child(login).child(timedate).child("candidates");
+                                    reference1.addChildEventListener(new ChildEventListener() {
+                                        @Override
+                                        public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
+                                            Toast errorToast = Toast.makeText(announcement_detail_inc.this, "Phone: "+snapshot.child("phone").getValue(String.class)+"Login: @"+snapshot.child("login").getValue(String.class), Toast.LENGTH_SHORT);
+                                            errorToast.show();
+                                        }
+                                        @Override
+                                        public void onChildChanged(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
+                                        }
+                                        @Override
+                                        public void onChildRemoved(@NonNull DataSnapshot snapshot) {
+                                        }
+                                        @Override
+                                        public void onChildMoved(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
+                                        }
+                                        @Override
+                                        public void onCancelled(@NonNull DatabaseError error) {
+                                        }
+                                    });
                                 }
                             }
                         }
