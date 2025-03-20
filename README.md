@@ -1,4 +1,6 @@
-Inkomek is a marketplace for natural products. Unlike Kaspi, it has a deeper focus on natural products and sellers, ensuring a more specialized and authentic marketplace experience.
+#Inkomek 
+
+This is a mobile app that will connect people who need help with the volunteers
 
 This repository contains a **bad** prototype version of the app, developed in Android Studio.
 
